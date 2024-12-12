@@ -42,6 +42,37 @@ padding: 30px;
 margin-bottom: 60px;
 }
 
+.minimal-content {
+    background-color: #f8f8f8;
+    box-shadow: -1px 2px 3px 0px rgba(0, 0, 0, 0.3);
+    border-radius: 6px;
+    padding: 10px 15px;
+    margin-bottom: 20px;
+    margin-top: -20px;
+}
+
+.input-container input {
+    font-size: 16px; /* Smaller text size */
+    padding: 5px 8px; /* Less padding */
+    border-radius: 4px;
+}
+
+.input-container button {
+    font-size: 16px; /* Match input size */
+    padding: 5px 10px; /* Compact button */
+}
+
+.response-container {
+    border-radius: 4px;
+    padding: 8px;
+    margin-top: 10px;
+}
+
+#ai-response p {
+    font-size: 16px;
+}
+
+
 .content .post-details{
     display: flex;
     justify-content: space-between;

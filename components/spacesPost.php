@@ -179,6 +179,32 @@ require_once("../backend/config/config.php");
                         
 
                     </div>
+                    <div class="content minimal-content">
+                        <div class="input-container flex items-center space-x-2">
+                            <input
+                                    type="text"
+                                    id="text"
+                                    placeholder="Ask about <?php echo $userData['space_name']; ?>"
+                                    class="flex-grow p-1 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-oran-500 text-gray-700 text-sm"
+                            >
+                            <button
+                                    onclick="ai_generateResponse();"
+                                    class="bg-[#f6a425] text-white px-3 py-1 rounded hover:bg-[#d48b20] transition duration-300 text-sm flex items-center"
+                            >
+                                <i class="fas fa-paper-plane mr-1"></i>
+                                Generate
+                            </button>
+                        </div>
+                        <div
+                                id="ai-response-container"
+                                class="response-container bg-white border border-gray-200 rounded p-1 max-h-[300px] overflow-y-auto hidden mt-2"
+                        >
+                            <div id="ai-response" class="text-gray-700 leading-normal">
+                                <p class="text-gray-500 italic">Responses will appear here...</p>
+                            </div>
+                        </div>
+                    </div>
+
                     <?php 
                         $query = "SELECT tp.*, td.full_name, td.profile_img, td.job, tr.role_name, ts.space_id, ts.space_name, COUNT(tc.posted_id) AS total_comments FROM tbl_spaces_post tp
                         JOIN tbl_account ta ON tp.acc_id = ta.acc_id
@@ -476,6 +502,7 @@ require_once("../backend/config/config.php");
 
 <?php include 'footer.php'; ?>
 <script src="../js/sidebar.js"></script>
+<script src="../js/ai_script.js"></script>
 <script src="../jquery/comments.js"></script>
 <script src="../jquery/vote.js"></script>
 <script src="../jquery/updatePost.js"></script>

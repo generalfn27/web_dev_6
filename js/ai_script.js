@@ -1,7 +1,7 @@
 function ai_generateResponse() {
     const textInput = document.getElementById("text");
-    const responseContainer = document.getElementById("response");
-    const responseWrapper = document.getElementById("response-container");
+    const responseContainer = document.getElementById("ai-response");
+    const responseWrapper = document.getElementById("ai-response-container");
     const inputText = textInput.value.trim() || textInput.placeholder.replace('Ask me anything about ', '');
 
     // Show loading state
